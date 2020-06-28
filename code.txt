@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<title> Registration </title>
+</head>
+<body> 
+	<form method ="POST" action="register.php">
+	Fullname: <input type="text" name="fullname" required=""><br>
+	Birthdate: <input type="date" name="birthdate" required=""><br>
+	Gender: <input type="radio" name="gender" required=""value="Female">Female
+			<input type="radio" name="gender" required="" value="Male">Male<br>
+	Username: <input type="text" name="username" required=""><br>
+	Password: <input type="password" name="password" required=""><br>
+	Confirm Password: <input type="password" name="confirmpassword" required=""><br>
+	<input type= "submit" name="submit">
+
+</form>
+</html>
+<?php
+	if (isset($_POST['submit']))
+	{
+		$fullname = $_POST['fullname'];
+		$birthdate = $_POST['birthdate'];
+		$gender = $_POST['gender'];
+		$username = $_POST['username'];
+		$password = $_POST['password'];
+		$confirmpassword = $_POST['confirmpassword'];
+
+		if ($confirmpassword == $password)
+		{
+			echo "You have successfully registered!";
+		}else
+		{
+			echo "Password did not match..";
+		}
+	}
+
+
+	?>
+	
+	
+
